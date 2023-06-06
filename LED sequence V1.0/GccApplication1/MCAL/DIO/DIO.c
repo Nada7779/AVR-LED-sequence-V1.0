@@ -75,6 +75,10 @@ void DIO_init(uint8_t pinNumber, uint8_t portNumber, uint8_t direction)
 			// Error handling
 		}
 		break;
+		default:
+		{
+		// Error handling
+		}
 	}
 	}// Initialize DIO direction
 
@@ -141,6 +145,10 @@ void DIO_write(uint8_t pinNumber, uint8_t portNumber, uint8_t value)
 			// Error handling
 		}
 		break;	
+		default:
+		{
+		// Error handling
+		}
 	}
 	} // Write data to DIO
 
@@ -161,7 +169,7 @@ void DIO_read(uint8_t pinNumber, uint8_t portNumber, uint8_t *value)
 	case PORT_D:
 	    *value= (PIND & (1<<pinNumber))>>pinNumber; //get state read bit
 	    break;
-    default:
+        default:
 	// Error handling
 	    break;
   }
